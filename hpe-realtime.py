@@ -34,13 +34,13 @@ while cap.isOpened():
     # Deteksi pose menggunakan YOLO pada frame night vision
     results_night = model(night_vision)
 
-    # 🔍 Deteksi tangan dengan MediaPipe (maksimal 2 tangan)
+    #  Deteksi tangan dengan MediaPipe (maksimal 2 tangan)
     results_hands = hands.process(frame_rgb)
     if results_hands.multi_hand_landmarks:
         for hand_landmarks in results_hands.multi_hand_landmarks:
             mp_drawing.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
 
-    # 🔍 Deteksi tangan dengan MediaPipe (maksimal 2 tangan)
+    #  Deteksi tangan dengan MediaPipe (maksimal 2 tangan)
     results_hands = hands.process(frame_rgb)
     if results_hands.multi_hand_landmarks:
         for hand_landmarks in results_hands.multi_hand_landmarks:
